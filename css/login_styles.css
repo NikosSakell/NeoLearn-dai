@@ -1,0 +1,40 @@
+body {
+    background-color: #181818;
+}
+
+h1 {
+    color: white;
+    margin-top: 50pt;
+    margin-bottom: 50pt;
+}
+
+p {
+    color: #4752A3;
+    font-size: small;
+    margin-bottom: 20pt;
+}
+
+.form {
+    background-color: #181818;
+    color: white;
+}
+
+.login-field {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#username,
+#password {
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    margin-bottom: 10pt;
+    border-radius: 10pt;
+}
+
+.login_button {
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    margin-bottom: 10pt;
+    border-radius: 10pt;
+}
