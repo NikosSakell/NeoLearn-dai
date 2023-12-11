@@ -9,6 +9,8 @@ h1 {
 }
 
 p {
+    margin-top: -5pt;
+    margin-left: -10pt;
     color: #4752A3;
     font-size: small;
     margin-bottom: 20pt;
@@ -20,21 +22,98 @@ p {
 }
 
 .login-field {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 100pt;
+    margin-bottom: 100pt;
+}
+
+.register-field {
+    margin-top: 50pt;
+    margin-bottom: 50pt;
 }
 
 #username,
 #password {
-    padding-top: 10pt;
-    padding-bottom: 10pt;
-    margin-bottom: 10pt;
-    border-radius: 10pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    margin-bottom: 5pt;
+    border-radius: 5pt;
 }
 
 .login_button {
+    background-color: #C01C1C;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    margin-bottom: 5pt;
+    border-radius: 5pt;
+}
+
+.register_button {
+    background-color: #C01C1C;
     padding-top: 10pt;
     padding-bottom: 10pt;
+    margin-bottom: 5pt;
+    border-radius: 5pt;
+}
+
+.register_button:hover {
+    background-color: #181818;
+    border: 1pt solid #C01C1C;
+    color: #C01C1C
+}
+
+#navbarNav,
+#toggler {
+    margin-right: 20pt;
+    margin-left: 10pt;
+}
+
+footer {
+    margin-top: 50pt;
+    background-color: black;
+    min-height: 100pt;
+}
+
+h3 {
+    font-size: large;
+    color: white;
+    margin-left: -10pt;
     margin-bottom: 10pt;
-    border-radius: 10pt;
+}
+
+#textfield {
+    border: 1pt solid #DFDFDF;
+    background-color: #181818;
+    color: #DFDFDF;
+    margin-top: 15pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+}
+
+#agree-field {
+    margin-top: 15pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    margin-bottom: 5pt;
+}
+
+#select-tag {
+    font-size: medium;
+    color: #DFDFDF;
+    margin-left: 5pt;
+    margin-bottom: 11pt;
+}
+
+#selector {
+    align-items: center;
+    border: 1pt solid #DFDFDF;
+    background-color: #181818;
+    color: #DFDFDF;
+    margin-top: 15pt;
+    font-size: medium;
+}
+
+#agree-label {
+    color: #DFDFDF;
+    margin-left: 10pt;
+    align-items: center;
 }
