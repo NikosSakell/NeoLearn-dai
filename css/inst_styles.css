@@ -21,6 +21,32 @@ body {
     min-height: 300pt;
 }
 
+h2{
+    background-color: #4752A3;
+    color:#ecf0f1;
+    text-align: center;
+    padding-bottom: 20pt;
+    padding-top: 30pt;
+}
+
+.mb-3{
+    background-color: #4752A3;
+    color: #ecf0f1;
+}
+.form-control{
+    background-color: #4752A3;
+    color: #ecf0f1;
+}
+
+.form-container{
+    background-color: #4752A3;
+    min-height: 500pt;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    padding-top: 10pt;
+    height: 100%;
+}
+
 
 /* Alignment of the .p element to center the text */
 p {
@@ -77,5 +103,4 @@ footer {
     padding: 20px;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
