@@ -6,7 +6,7 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="css\profile_styles.css" />
-    <title>NeoLearn - All Courses</title>
+    <title>NeoLearn - Edit Profile</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -14,6 +14,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="scripts/edit_profile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
@@ -84,7 +85,185 @@
       </div>
     </nav>
 
-    <p>Under construction</p>
+    <div class="infoContainer">
+      <div class="row g-3" id="basicInfoContainer">
+        <div class="col-md-6" id="imageContainer">
+          <div class="card">
+            <img
+              src="images/blank-profile-picture-973460_1280.png"
+              class="profilePhoto"
+              id="profilePhoto"
+            />
+            <div class="card-body">
+              <button
+                type="button"
+                class="editPhotoButton"
+                id="editButtons"
+                data-bs-toggle="modal"
+                data-bs-target="#editPhotoModal"
+              >
+                Edit Photo
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" id="name_email_phone">
+          <div class="basicInfo">
+            <p class="nameHolder" id="nameHolder">Name Surname</p>
+            <p class="emailHolder" id="emailHolder">example@email.com</p>
+            <p class="phoneHolder" id="phoneHolder">+30 6969696969</p>
+
+            <div id="editBasicInfo">
+              <button
+                type="button"
+                class="editButton"
+                id="editButtons"
+                data-bs-toggle="modal"
+                data-bs-target="#editInfoModal"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="row g-3">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="descriptionArea" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="descriptionArea"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="inputCompany" class="form-label">Company</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCompany"
+            placeholder="Company Name"
+          />
+        </div>
+        <div class="col-12" id="buttons">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Edit/Delete/Add Photo Modal -->
+    <div
+      class="modal fade"
+      id="editPhotoModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Edit Profile Photo
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Upload New</label>
+              <input class="form-control" type="file" id="formFile" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              onclick="deleteImage()"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Delete Photo
+            </button>
+            <button
+              onclick="displayImage()"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Basic Info Modal -->
+    <div
+      class="modal fade"
+      id="editInfoModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Info</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <div class="mb-3">
+                <label for="fullname" class="col-form-label">Fullname:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullname"
+                  placeholder="Name Surname"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="col-form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="example@email.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumber" class="col-form-label"
+                  >Phone Number:</label
+                >
+                <input type="tel" class="form-control" id="phoneNumber" />
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              onclick="changeText()"
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-primary"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <p>NeoLearn &copy; 2023</p>
