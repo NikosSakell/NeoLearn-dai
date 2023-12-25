@@ -52,5 +52,5 @@ function displayImage() {
 // This function deletes the src attribute of the profile Image
 function deleteImage() {
   let uploadedImage = document.getElementById("profilePhoto");
-  uploadedImage.src = "";
+  uploadedImage.src = "images/blank-profile-picture-973460_1280.png";
 }
