@@ -14,7 +14,7 @@
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
  </head>
-    <link rel="stylesheet" href="css\studentmain_style.css">
+    <link rel="stylesheet" href="css\studcourses.css">
     <title>NeoLearn</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
 </head>
@@ -62,43 +62,91 @@
 
     </nav>
 
-
-
-    <div class="container mt-5">
-        <h2>Available Courses</h2>
-        
-        <div id="courseCarousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" id="carousel-inner">
-          </div>
- 
-          <a class="carousel-control-prev" href="#courseCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#courseCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span> 
-          </a>
-    
-          <div class="text-bottom-right mt-3">
-            <a href="student_courses.html">View All</a>
+    <div class="row">
+        <div class="col-11 col-sm-8 col-md-6 col-lg-5">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card">
+                  <img
+                    src="images/sample_image1.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Lesson1</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Select</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <img
+                    src="images/sample_image2.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Lesson2</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Select</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <img
+                    src="images/sample_image3.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Lesson3</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Select</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="header-container">
-        <h1 class="header-text">Get ready to explore a new world full of opportunities</h1>
-      </div>
 
-     <div class="info-container">
-    <p class="info-text">Complete the challenges and get certifications <img src="images\clipart2614681.png" alt="Black medal emoji " width="50" height="50" class="image"> </p>
-    </div>
-
-
-    <footer class="fixed-bottom  text-white text-center py-2">
+      <footer class="footer">
         <p>NeoLearn &copy; 2023</p>
         <nav>
             <a href="https://www.uom.gr/">Πανεπιστήμιο Μακεδονίας</a>
         </nav>
-    </footer>
+      </footer>
     
 
     

@@ -23,44 +23,47 @@
      <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #192370;">
 
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" alt="neoLearn logo " width="80" height="40"></a>
-        </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Courses</a>
-                  </li>
+      <div>
+          <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.html'" alt="" width="80" height="40"></a>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.html'">Courses</a>
+                </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Challenges
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='test_challenges.html'">Test Yourself</a></li>
+                    <li><a class="dropdown-item" href="#">Scores</a></li>
+                  </ul>
+                </li> 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Challenges
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Test Yourself</a></li>
-                      <li><a class="dropdown-item" href="#">Scores</a></li>
-                      <li><a class="dropdown-item" href="#">Certifications</a></li>
-                    </ul>
-                  </li> 
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Profile
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='index.html'">Log out</a></li>
 
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Profile
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Support</a></li>
-                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                  </ul>
+                </li>
+          </ul>
+      </div>
 
-                    </ul>
-                  </li>
-            </ul>
-        </div>
-    </nav>
+  </nav>
+
+
+
 
     <div class="container">
         <h2>Available Tests</h2>
