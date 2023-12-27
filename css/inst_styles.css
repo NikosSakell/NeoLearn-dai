@@ -19,6 +19,13 @@ body {
 .row {
   background-color: #4752a3;
   min-height: 300pt;
+  padding-bottom: 100pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
+
+#last_row {
+  padding-top: 30pt;
 }
 
 h2 {

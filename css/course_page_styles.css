@@ -1,0 +1,91 @@
+html,
+body {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.row {
+  background-color: rgb(15, 15, 15);
+  justify-content: center;
+}
+
+.iframe-container {
+  width: 80%; /* Default width for all screen sizes */
+}
+
+#last_row {
+  padding-bottom: 50pt;
+}
+
+#download_icon {
+  padding-right: 5pt;
+}
+
+h3 {
+  text-align: center;
+  color: #ecf0f1;
+  padding-bottom: 20pt;
+  padding-top: 20pt;
+}
+
+h4,
+h5 {
+  color: #ecf0f1;
+  text-align: start;
+  padding-bottom: 20pt;
+  padding-top: 50pt;
+}
+
+/* Alignment of the .p element to center the text */
+.main-text {
+  padding-top: 50pt;
+  padding-bottom: 30pt;
+  color: #ecf0f1;
+  text-align: start;
+  font-size: medium;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer {
+  background-color: #192370;
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
