@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143.426" height="114.741" viewBox="0 0 143.426 114.741">
+  <path id="Icon_awesome-laptop" data-name="Icon awesome-laptop" d="M139.841,93.227H85.5a7.065,7.065,0,0,1-7.337,7.171H64.542A7.61,7.61,0,0,1,57.2,93.227H3.586A3.6,3.6,0,0,0,0,96.813V100.4a14.385,14.385,0,0,0,14.343,14.343H129.084A14.385,14.385,0,0,0,143.426,100.4V96.813A3.6,3.6,0,0,0,139.841,93.227Zm-10.757-82.47A10.789,10.789,0,0,0,118.327,0H25.1A10.789,10.789,0,0,0,14.343,10.757v75.3H129.084ZM114.741,71.713H28.685V14.343h86.056Z" fill="#192370"/>
+  <line id="Line_1" data-name="Line 1" x2="68" transform="translate(35.926 23.371)" fill="none" stroke="#192370" stroke-width="5"/>
+  <line id="Line_2" data-name="Line 2" x2="51" transform="translate(35.926 33.371)" fill="none" stroke="#192370" stroke-width="5"/>
+  <line id="Line_3" data-name="Line 3" x2="68" transform="translate(35.926 43.371)" fill="none" stroke="#192370" stroke-width="5"/>
+  <line id="Line_4" data-name="Line 4" x2="40" transform="translate(35.926 53.371)" fill="none" stroke="#192370" stroke-width="5"/>
+</svg>

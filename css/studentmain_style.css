@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #050505; 
+  }
+
+  h2{
+    color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .text-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  .header-container {
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .header-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+    animation: colorChange 4s infinite alternate; /* Διακύμανση χρώματος για 4 δευτερόλεπτα */
+  }
+
+  @keyframes colorChange {
+     0% {
+      color: #6792bf;
+    }
+    50% {
+      color: #00ffcc; 
+    }
+    100% {
+      color: #b8c0c9;
+    } 
+  }
+   
+  .info-container {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(45deg, #ba9dd5, #4b0082);
+    border: 2px solid #8a2be2;
+    border-radius: 15px;
+    display: inline-block; 
+    position: relative;
+    margin-left: 25%;
+  }
+  
+
+  .info-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  footer {
+    background-color:  #192370; 
+    color: #ecf0f1; 
+    padding: 20px; 
+    text-align: center; 
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  
+  
+  footer a {
+    color: #ecf0f1; 
+    text-decoration: none; 
+    margin: 0 10px;
+    font-weight: bold; 
+  }
+  
+
+  footer p {
+    font-size: 14px; 
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="css\course_page_styles.css" />
+    <title>NeoLearn - Course Title Here</title>
+    <!-- Adding library for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar sticky-top navbar-expand-sm navbar-dark"
+      style="background-color: #192370"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div>
+        <a class="navbar-brand" href="instructor_main.html"
+          ><img src="images\neolearn_logo.svg" alt="" width="80" height="40"
+        /></a>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Courses
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="add_courses.html">Add New</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="course_list.html">View List</a>
+              </li>
+              <li><a class="dropdown-item" href="#">More</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Support</a></li>
+              <li><a class="dropdown-item" href="#">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <div class="row">
+        <div class="col-10 container">
+          <img src="images/javatest.png" alt="Avatar" class="image" />
+          <div class="overlay">Course Title</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-10">
+        <div class="title_container">
+          <p class="main-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            mollis commodo massa id tempus. Vivamus semper bibendum porttitor.
+            In tempor rhoncus tortor a vehicula. Vivamus ultricies, est in
+            lacinia elementum, tortor augue faucibus turpis, id volutpat nulla
+            sapien id eros. Aenean nibh tellus, feugiat sit amet gravida in,
+            convallis in.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="last_row">
+      <div class="col-10">
+        <div class="additional_info_container">
+          <h4>Additional Resources:</h4>
+          <div class="video_container">
+            <div class="row justify-content-start">
+              <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+                <div
+                  class="embed-responsive embed-responsive-16by9 iframe-container"
+                >
+                  <iframe
+                    width="420pt"
+                    height="315pt"
+                    src="https://www.youtube.com/embed/wXUhTZpF_HQ?si=ikMOxr3K95OJ7uga"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5>
+            Download additional files and media related to this course here:
+          </h5>
+          <button class="btn btn-primary">
+            <i class="fa fa-download" id="download_icon"></i>Download
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>NeoLearn &copy; 2023</p>
+      <nav>
+        <a href="https://www.uom.gr/">Πανεπιστήμιο Μακεδονίας</a>
+      </nav>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
