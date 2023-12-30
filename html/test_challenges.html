@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+ </head>
+    <link rel="stylesheet" href="css\chaltest_styles.css">
+    <title>NeoLearn</title>
+    <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #192370;">
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div>
+          <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.html'" alt="" width="80" height="40"></a>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.html'">Courses</a>
+                </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Challenges
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='test_challenges.html'">Test Yourself</a></li>
+                    <li><a class="dropdown-item" href="#">Scores</a></li>
+                  </ul>
+                </li> 
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Profile
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='index.html'">Log out</a></li>
+
+                  </ul>
+                </li>
+          </ul>
+      </div>
+
+  </nav>
+
+
+
+
+    <div class="container">
+        <h2>Available Tests</h2>
+    
+        <div class="card-deck">
+     
+            <div class="card mb-4" >
+                <img src="images\htmltest1.png"style="max-width: 1920px; height: 250px; margin: 0px; width: 465px;" class="card-img-top" alt="example picture with html code ">
+                <div class="card-body">
+                  <h5 class="card-title">HTML Quiz</h5>
+                  <p class="card-text">Embark on a journey into the world of web development with our HTML Basics Quiz! This quiz is designed to evaluate your understanding of HTML fundamentals, covering essential topics such as tags, attributes, document structure, and form elements. </p>
+                  <a href="#"  id="quizButton1" class="btn btn-primary">Take quiz now</a>
+                </div>
+              </div>
+    
+      
+              <div class="card mb-4" >
+                <img src="images\javatest.png" jsaction="VQAsE" class="sFlh5c pT0Scc iPVvYb" style="max-width: 1920px; height: 250px; margin: 0px; width: 465px;" alt="example picture with Java basic code " jsname="kn3ccd" aria-hidden="false">
+                <div class="card-body">
+                  <h5 class="card-title">Java Quiz</h5>
+                  <p class="card-text">Challenge your Java programming skills with our Java Programming Quiz! This quiz is designed to test your knowledge of Java syntax, concepts, and best practices</p>
+                  <a href="#"  id="quizButton2" class="btn btn-primary">Take quiz now</a>
+                </div>
+              </div>
+    
+       
+              <div class="card mb-4" >
+                <img src="images\ctest.jpg" style="max-width: 1920px; height: 250px; margin: 0px; width: 465px;" class="card-img-top" alt="Example image with basic C code ">
+                <div class="card-body">
+                  <h5 class="card-title">C Quiz</h5>
+                  <p class="card-text">Dive into the realm of low-level programming excellence with our C Programming Mastery Quiz! This quiz is crafted to assess your proficiency in the C programming language, covering concepts such as variables, pointers, control flow, and memory management.</p>
+                  <a href="#"  id="quizButton3" class="btn btn-primary">Take quiz now</a>
+                </div>
+              </div>
+            </div>
+         </div><div class="card mb-4" >
+          <img src="images\ctest.jpg" style="max-width: 1920px; height: 250px; margin: 0px; width: 465px;" class="card-img-top" alt="Example image with basic C code ">
+          <div class="card-body">
+            <h5 class="card-title">C Quiz</h5>
+            <p class="card-text">Dive into the realm of low-level programming excellence with our C Programming Mastery Quiz! This quiz is crafted to assess your proficiency in the C programming language, covering concepts such as variables, pointers, control flow, and memory management.</p>
+            <a href="#"  id="quizButton3" class="btn btn-primary">Take quiz now</a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+
+      <footer class="footer">
+        <p>NeoLearn &copy; 2023</p>
+        <nav>
+            <a href="https://www.uom.gr/">Πανεπιστήμιο Μακεδονίας</a>
+        </nav>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="scripts\chalenges_script.js"></script>
+
+    
+</body>
+</html>

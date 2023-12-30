@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #050505; 
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.bubble {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  max-width: 70%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.left {
+  background-color: #87CEEB; 
+}
+
+.right {
+  background-color: #98FB98; 
+}
+
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.left::before {
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #87CEEB transparent transparent;
+  right: -15px;
+  
+}
+
+.right::before {
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #98FB98;
+  left: -15px;
+  top: 10px;
+}
+
+.low {
+  top: 30px; 
+}
+
+.imag1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header-container {
+  text-align: center;
+  position: relative;
+}
+.header-container h1 {
+  display: inline-block;
+  position: relative;
+  padding: 30px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0;
+  font-size: 36px;
+}
+.header-container img {
+  position: relative;
+  width: 60px;
+  height: auto;
+ 
+}
+
+.box-container {
+  text-align: center;
+  margin: 0 auto;
+  position: relative; 
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.box {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.learn {
+  background-color:black;
+  color: #fff;
+  font-family: fantasy;
+  color:#9e4fb8 ;
+}
+
+.share {
+  background-color:black;
+  color: #fff;
+  font-family: fantasy;
+  color: #c9a4d5;
+ 
+}
+
+footer {
+  background-color:  #192370; 
+  color: #ecf0f1; 
+  padding: 20px; 
+  text-align: center; 
+  font-family:Georgia, 'Times New Roman', Times, serif;
+
+
+footer a {
+  color: #ecf0f1; /* Λευκό χρώμα συνδέσμων */
+  text-decoration: none; /* Καμία υπογράμμιση */
+  margin: 0 10px; /* Απόσταση μεταξύ των συνδέσμων */
+  font-weight: bold; /* Έντονη γραμματοσειρά */
+}
+
+/* Στυλ για το κείμενο φούτερ */
+footer p {
+  font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
+}
+}
