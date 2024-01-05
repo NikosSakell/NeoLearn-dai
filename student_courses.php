@@ -73,7 +73,7 @@
                         $count = 0;
 
                         $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
-                        $result=mysqli_query($con, "SELECT courses.Title, courses.Description , courses.Image FROM courses JOIN student_has_courses WHERE courses.Id=student_has_courses.Course_Id;");
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image FROM course JOIN student_has_courses WHERE course.Id=student_has_courses.Course_Id;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
