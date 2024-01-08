@@ -6,7 +6,7 @@ const quizButton3 = document.getElementById('quizButton3');
 
 quizButton1.addEventListener('click', function() {
     showQuizModal('You will transfer to a new window to take the quiz . It consists of 10 questions and you must choose 1 correct answer for each one'
-    , 'htquiz.html');
+    , 'cquiz.html');
 });
 
 quizButton2.addEventListener('click', function() {
@@ -14,7 +14,7 @@ quizButton2.addEventListener('click', function() {
 });
 
 quizButton3.addEventListener('click', function() {
-    showQuizModal('You will transfer to a new window to take the quiz . It consists of 10 questions and you must choose 1 correct answer for each one', 'cquiz.html');
+    showQuizModal('You will transfer to a new window to take the quiz . It consists of 10 questions and you must choose 1 correct answer for each one', 'htquiz.html');
 });
 
 function showQuizModal(instructions, nextPage) {

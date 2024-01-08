@@ -30,23 +30,18 @@
         </button>
 
         <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.html'" alt="" width="80" height="40"></a>
+            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.php'" alt="" width="80" height="40"></a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.html'">Courses</a>
-                  </li>
+                    <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.php'">Courses</a>
+                </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Challenges
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#" onclick="window.location.href='test_challenges.php'">Test Yourself</a></li>
-                      <li><a class="dropdown-item" href="#">Scores</a></li>
-                    </ul>
-                  </li> 
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='test_challenges.php'">Challenges</a>
+                </li>
+
 
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,7 +49,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Support</a></li>
-                      <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php'">Log out</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php?flag=0'">Log out</a></li>
 
                     </ul>
                   </li>
@@ -73,12 +68,13 @@
                         $count = 0;
 
                         $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
-                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image FROM course JOIN student_has_courses WHERE course.Id=student_has_courses.Course_Id;");
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN student_has_courses WHERE course.Id=student_has_courses.Course_Id;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
                             $description = $row[1];
-                            $image = $row[2];                
+                            $image = $row[2];    
+                            $id = $row[3];            
                     ?>
 
                     <div class="carousel-item <?php if($count==0) :?> active <?php endif;?>">
@@ -93,8 +89,8 @@
                                 <p class="card-text">
                                 <?=$description?>
                                 </p>
-                                <a href="#" class="btn btn-primary">Select</a>
                             </div>
+                            <a href="studet_course_page.php?id=<?=$id?>" class="btn btn-primary">Select</a>
                         </div>
                     </div>
                     

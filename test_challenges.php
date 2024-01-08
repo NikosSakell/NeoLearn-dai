@@ -34,28 +34,22 @@
           <ul class="navbar-nav">
               <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.php'">Courses</a>
-                </li>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='test_challenges.php'">Challenges</a>
+              </li>
 
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                   Challenges
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" onclick="window.location.href='test_challenges.php'">Test Yourself</a></li>
-                    <li><a class="dropdown-item" href="#">Scores</a></li>
-                  </ul>
-                </li> 
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Support</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php?flag=0'">Log out</a></li>
 
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                   Profile
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Support</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php'">Log out</a></li>
-
-                  </ul>
-                </li>
+                </ul>
+              </li>
           </ul>
       </div>
 
@@ -81,6 +75,7 @@
                     $title = $row[0];
                     $description = $row[1];
                     $image = $row[2];
+                    echo ""
             ?>
 
             <div class="card mb-4" >
@@ -109,7 +104,7 @@
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="scripts\chalenges_script.js"></script>
+      <script src="script\chalenges_script.js"></script>
 
 
     

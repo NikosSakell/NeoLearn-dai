@@ -34,23 +34,17 @@ session_start();
         </button>
 
         <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.html'" alt="" width="80" height="40"></a>
+            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.php'" alt="" width="80" height="40"></a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='student_courses.php'">Courses</a>
-                  </li>
+                </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Challenges
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#" onclick="window.location.href='test_challenges.php'">Test Yourself</a></li>
-                      <li><a class="dropdown-item" href="#">Scores</a></li>
-                    </ul>
-                  </li> 
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#" onclick="window.location.href='test_challenges.php'">Challenges</a>
+                </li>
 
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +52,7 @@ session_start();
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Support</a></li>
-                      <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php'">Log out</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php?flag=0'">Log out</a></li>
 
                     </ul>
                   </li>

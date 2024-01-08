@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
+    //If form not submitted, display form.
+    $flag = $_GET['flag'];
+    if($flag==1) echo "<script type='text/javascript'>alert('New Register added successfully!');</script>";
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
