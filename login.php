@@ -24,7 +24,7 @@
         </button>
 
         <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" alt="" width="80" height="40"></a>
+            <a class="navbar-brand" href="index.php?flag=0"><img src="images\neolearn_logo.svg" alt="" width="80" height="40"></a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
@@ -90,6 +90,7 @@
                 while ($row = mysqli_fetch_array($result)) {                    
                     $_SESSION['Id'] = $row[0];
                     $role = $row[1];
+                    echo "$role";
                 }
                 mysqli_close($con);
 
@@ -99,7 +100,7 @@
                 }
 
                 if($role=="INSTRUCTOR"){
-                    header("Location: instructor_main.html");
+                    header("Location: instructor_main.php?flag=0");
                     exit();    
                 }                     
             }		

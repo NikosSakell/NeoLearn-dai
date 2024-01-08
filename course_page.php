@@ -46,7 +46,7 @@
       </button>
 
       <div>
-        <a class="navbar-brand" href="instructor_main.html"
+        <a class="navbar-brand" href="instructor_main.php?flag=0"
           ><img src="images\neolearn_logo.svg" alt="" width="80" height="40"
         /></a>
       </div>
@@ -87,7 +87,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Support</a></li>
-              <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php'">Log out</a></li>
+              <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php?flag=0'">Log out</a></li>
             </ul>
           </li>
         </ul>

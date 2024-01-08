@@ -41,7 +41,7 @@
       </button>
 
       <div>
-        <a class="navbar-brand" href="instructor_main.html"
+        <a class="navbar-brand" href="instructor_main.php?flag=0"
           ><img src="images\neolearn_logo.svg" alt="" width="80" height="40"
         /></a>
       </div>
@@ -79,7 +79,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Support</a></li>
-              <li><a class="dropdown-item" href="index.php">Log Out</a></li>
+              <li><a class="dropdown-item" href="index.php?flag=0">Log Out</a></li>
             </ul>
           </li>
         </ul>
@@ -300,11 +300,11 @@
         }
 
         mysqli_query($con, "INSERT INTO course (Id, Instructor_Id, Related_Language_Id, Title, Image, Description, Difficulty) VALUES (NULL, '$instructor_id', '$language_id', '$title', '$photos', '$description', '$difficulty');");
-        $result=mysqli_query($con, "SELECT MAX(Id) FROM file;");
+        $result=mysqli_query($con, "SELECT MAX(Id) FROM course;");
         while ($row = mysqli_fetch_array($result)) {                    
           $course_id = $row[0];
         }
-        $course_id++;
+        echo "$course_id";
         if(mysqli_affected_rows($con) ==1) {
           if (is_uploaded_file($_FILES['file']['tmp_name']) && !$_FILES['file']['size'] == 0) {
             copy($_FILES['file']['tmp_name'], "./files/".$_FILES['file']['name']);
@@ -318,8 +318,8 @@
           }
 
         }
-
-        //header("Location: instructor_main.html");
+  
+        header("Location: instructor_main.php?flag=1");
 
       }
     ?>

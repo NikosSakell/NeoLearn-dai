@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css\profile_styles.css" />
     <title>NeoLearn - Edit Profile</title>
-    <link rel="icon" type="image/x-icon" href="instructor_main.html" />
+    <link rel="icon" type="image/x-icon" href="instructor_main.php?flag=0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -42,7 +42,7 @@
       </button>
 
       <div>
-        <a class="navbar-brand" href="instructor_main.html"
+        <a class="navbar-brand" href="instructor_main.php?flag=0"
           ><img src="images\neolearn_logo.svg" alt="" width="80" height="40"
         /></a>
       </div>
@@ -83,7 +83,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Support</a></li>
-              <li><a class="dropdown-item" href="index.php">Log Out</a></li>
+              <li><a class="dropdown-item" href="index.php?flag=0">Log Out</a></li>
             </ul>
           </li>
         </ul>

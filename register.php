@@ -24,7 +24,7 @@
         </button>
 
         <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" alt="" width="80" height="40"></a>
+            <a class="navbar-brand" href="index.php?flag=0"><img src="images\neolearn_logo.svg" alt="" width="80" height="40"></a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
@@ -86,7 +86,7 @@
                         <p id="select-tag">Select your role:</p>
                     </div>
                     <div class="col" id="select-label">
-                        <input type="radio" id="html" name="role" value="PROFESSOR">
+                        <input type="radio" id="html" name="role" value="INSTRUCTOR">
                         <label for="html">INSTRUCTOR</label>
                     </div>
                     <div class="col" id="select-label">
@@ -142,13 +142,13 @@
 		mysqli_query($con, "INSERT INTO student VALUES('$id')");
 	}
 	
-	if($role=='PROFESSOR'){
+	if($role=='INSTRUCTOR'){
 		mysqli_query($con, "INSERT INTO instructor (`Id`) VALUES ('$id');");
 	}
 	
 		if(mysqli_affected_rows($con) >0) {  
             mysqli_close($con);
-            header("Location: index.php");
+            header("Location: index.php?flag=1");
             exit();
         }
 		else {
