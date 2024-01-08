@@ -75,6 +75,7 @@
                     $title = $row[0];
                     $description = $row[1];
                     $image = $row[2];
+                    echo ""
             ?>
 
             <div class="card mb-4" >
