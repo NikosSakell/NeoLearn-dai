@@ -33,9 +33,9 @@
   </div>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
               <a class="nav-link" href="#">Help</a>
-          </li>
+          </li> -->
           <li class="nav-item">
               <a class="nav-link" href="#">About us </a>
           </li>
@@ -51,49 +51,68 @@
   
 </nav>
 
-<div class="chat-container">
-    <div class=".container">
-        <div class="row">
-          <div class=" mb-3">
+<div class="row chat">
+      <div class="chat-container">
+        <div class="container">
+          <div class="message1 mb-3">
             <div class="bubble left">Hey, how can I add Java to my HTML?</div>
           </div>
-          <div class=" mb-3 offset-md-4">
+          <div class="message2 mb-3 offset-md-4">
             <div class="bubble right">Um, you mean JavaScript?</div>
           </div>
-          <div class=" mb-3">
+          <div class="message1 mb-3">
             <div class="bubble left">Yes, that one</div>
+          </div>
         </div>
+        <div class="message-field">
+          <div class="text-field">Just go to nlrn.co|</div>
+          <div class="send-icon">Send</div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
 
-<div class="header-container">
-    <h1>Welcome to NeoLearn, the online school of programming <img src="images/laptop_prog.png" alt="white computer side emoji " class="image"></h1>
-</div>
+    <div class="header-container">
+      <h1>
+        Welcome to NeoLearn, the online school of programming
+        <img
+          src="images/laptop_prog.png"
+          alt="white computer side emoji "
+          class="image"
+        />
+      </h1>
+    </div>
 
-<div class="row justify-content-evenly">
-   
-    <div class="col-12 col-md-4 order-md-1 order-2">
+    <div class="row justify-content-evenly">
+      <div class="col-12 col-md-4 order-md-1 order-2">
         <div class="container">
-            <div class="box-container">
-                <div class="box learn">
-                    <h2>Do You Want to Learn</h2>
-                </div>
-                <div class="box share">
-                    <h2>Or You Want to Share What You Know</h2>
-                </div>
+          <div class="box-container">
+            <div class="box learn">
+              <h2>Do You Want to Learn</h2>
             </div>
+            <div class="box share">
+              <h2>Or You Want to Share Your Knowledge</h2>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="w-100 d-md-none"></div>
+
+      <div class="row justify-content-evenly">
+        <div class="col-12 col-md-4 order-md-2 order-1">
+          <div class="imag1">
+            <img
+              class="logos-img"
+              src="images/pngkey.com-coding-icon-png-3598627.png"
+              alt=" black and white programming languages logos "
+              width="400"
+              height="150"
+            />
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-100 d-md-none"></div>
-
-    <div class="col-12 col-md-4 order-md-2 order-1">
-        <div class="imag1">
-            <img src="images/pngkey.com-coding-icon-png-3598627.png" alt=" black and white programming languages logos " width="400" height="150">
-        </div>
-    </div>
-</div>
 
 <footer class="footer">
     <p>NeoLearn &copy; 2023</p>
