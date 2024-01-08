@@ -231,7 +231,7 @@
               $file = $_POST['file'];
               
               
-              $con=mysqli_connect('localhost', 'root', '', 'neolearn');
+              $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
               mysqli_query($con, "INSERT INTO courses VALUES(DEFAULT, '$instructor_id', '$title', '$photos', '$description', '$language', '$difficulty', '$file',)");
               if(mysqli_affected_rows($con) ==1) {
                 echo "<font color =green size =14>Επιτυχής Δημιουργία! :)</font><br />";
