@@ -91,7 +91,13 @@
     </nav>
 
 
-
+    <?php
+      session_start();
+      //If form not submitted, display form.
+      if (!isset($_POST['submit'])){
+    ?>
+    <!-- Edit/Delete/Add Photo Modal -->
+    <form method="post" action="" class="row g-3">
 
     <div class="infoContainer">
       <div class="row g-3" id="basicInfoContainer">
@@ -135,17 +141,17 @@
           </div>
         </div>
       </div>
-      <form method="post" action="" class="row g-3">
         <div class="col-12">
           <div class="mb-3">
-            <label for="descriptionArea" class="form-label">Description</label>
-            <textarea class="form-control" id="descriptionArea" rows="3"
-            ></textarea>
+            <label for="descriptionArea" class="form-label">Birth Date</label>
+            <input type="date" class="form-control" name="birthDate" id="descriptionArea" rows="3"
+            ></input>
           </div>
         </div>
         <div class="col-12">
           <label for="inputCompany" class="form-label">Company</label>
           <input
+            name="company"
             type="text"
             class="form-control"
             id="inputCompany"
@@ -153,16 +159,10 @@
           />
         </div>
         <div class="col-12" id="buttons">
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" name="submit" class="btn btn-primary">Save</button>
           <button type="submit" class="btn btn-secondary">Reset</button>
         </div>
-      </form>
     </div>
-
-
-
-    <!-- Edit/Delete/Add Photo Modal -->
-    <form method="post" action=""></form>
     <div
       class="modal fade"
       id="editPhotoModal"
@@ -186,7 +186,7 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="formFile" class="form-label">Upload New</label>
-              <input class="form-control" type="file" id="formFile" />
+              <input class="form-control" type="file" id="formFile" name="image" />
             </div>
           </div>
           <div class="modal-footer">
@@ -233,17 +233,25 @@
           <div class="modal-body">
             <div class="mb-3">
               <div class="mb-3">
-                <label for="fullname" class="col-form-label">Fullname:</label>
+                <label for="fullname" class="col-form-label">Name:</label>
                 <input
+                  name="name"
                   type="text"
                   class="form-control"
                   id="fullname"
-                  placeholder="Name Surname"
+                  placeholder="Name"
                 />
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumber" class="col-form-label"
+                  >Surname:</label
+                >
+                <input type="tel" class="form-control" id="phoneNumber" name="surname" placeholder="Surname"/>
               </div>
               <div class="mb-3">
                 <label for="email" class="col-form-label">Email:</label>
                 <input
+                  name="email"
                   type="email"
                   class="form-control"
                   id="email"
@@ -254,15 +262,17 @@
                 <label for="phoneNumber" class="col-form-label"
                   >Phone Number:</label
                 >
-                <input type="tel" class="form-control" id="phoneNumber" />
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber"/>
               </div>
+              
             </div>
           </div>
 
           <div class="modal-footer">
             <button
               onclick="changeText()"
-              type="button"
+              type="submit"
+              name="submit"
               data-bs-dismiss="modal"
               class="btn btn-primary"
             >
@@ -272,6 +282,44 @@
         </div>
       </div>
     </div>
+    </form>
+    <?php
+      }
+      else{
+        $instructor_id = $_SESSION['Id'];
+        $phoneNumber = $_POST['phoneNumber'];
+        $email = $_POST['email'];
+        $company = $_POST['company'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $image = $_POST['image'];
+        $birth_date = $_POST['birthDate'];
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+        if(!$name==""){
+          mysqli_query($con, "UPDATE user SET First_Name = '$name' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$surname==""){
+          mysqli_query($con, "UPDATE user SET Last_Name = '$surname' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$email==""){
+          mysqli_query($con, "UPDATE user SET Email = '$email' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$phoneNumber==""){
+          mysqli_query($con, "UPDATE user SET Phone = '$phoneNumber' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$image==""){
+          mysqli_query($con, "UPDATE user SET Image = '$image' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$birth_date==""){
+          mysqli_query($con, "UPDATE user SET Birth_Date = '$birth_date' WHERE user.Id = '$instructor_id';");
+        }
+        if(!$company==""){
+          mysqli_query($con, "UPDATE user SET Company = '$company' WHERE user.Id = '$instructor_id';");
+        }
+        header("Location: instructor_main.php?flag=2");
+
+      }
+    ?>
 
     <footer class="footer">
       <p>NeoLearn &copy; 2023</p>

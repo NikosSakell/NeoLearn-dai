@@ -5,7 +5,8 @@
     //If form not submitted, display form.
     $flag = $_GET['flag'];
     if($flag==1)    echo "<script type='text/javascript'>alert('Course added successfully!');</script>";
-?>
+    if($flag==2)    echo "<script type='text/javascript'>alert('Profile changed successfully!');</script>";
+    ?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
