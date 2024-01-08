@@ -59,13 +59,13 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="course_list.html">View List</a>
+                <a class="dropdown-item" href="course_list.php">View List</a>
               </li>
               <li><a class="dropdown-item" href="#">More</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profile.html">Profile</a>
+            <a class="nav-link" href="profile.php">Profile</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -79,186 +79,250 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Support</a></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item" href="index.php">Log Out</a></li>
             </ul>
           </li>
         </ul>
       </div>
     </nav>
+    <?php
+      session_start();
+      //If form not submitted, display form.
+      if (!isset($_POST['Create']) && !isset($_POST['Cancel'])){
+    ?>
+    <form method="post" action="" enctype="multipart/form-data">
 
     <div class="row">
       <div class="form-container">
-        <h2>Create New Course</h2>
+      <h2>Create New Course</h2>
 
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Title</label>
-          <input
-            type="text"
-            name="title"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="ex. HTML Basics"
-          />
-        </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text"  name="title" class="form-control" id="exampleFormControlInput1" placeholder="ex. HTML Basics" />
+          </div>
 
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Add a photo</label>
-          <input class="form-control" type="file" id="formFile" name="photos"/>
-          
-        </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Add a photo</label>
+            <input class="form-control" type="file" id="formFile" name="photos"/>
 
-        <?php
-          session_start();
-          if (isset($_FILES['photos'])) {
-            $uploadsDirectory = "images";
-            $targetFile = $uploadsDirectory . basename($_FILES['photos']['name']);
+          </div>
 
-            if (move_uploaded_file($_FILES['photos']['tmp_name'], $targetFile)) {
-              echo "File uploaded successfully.";
-            } else {
-              echo "Error uploading file.";
-            }
-          }
-        ?>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
 
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"
-            >Description</label
-          >
-          <textarea
-            class="form-control"
-            name="description"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
+          <div class="mb-3">
+            <label for="form-select" class="form-label">Related language or framework</label>
+            <select class="form-select" aria-label="Default select example" name="dropdown">
+              <?php 
+                $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                $count = 0;
+                $result=mysqli_query($con, "SELECT Title FROM language;");
+                while ($row = mysqli_fetch_array($result)) {                    
+                  $title = $row[0];
+                  if($count==0){
+              ?>
+                <option selected><?=$title?></option>
+              <?php
+                }
+              else{
+              ?>            
+                <option value="<?=$count?>"><?=$title?></option>
+              <?php
+              }
+              $count++;
+              }
+              ?>
+            </select>
+          </div>
 
-        <div class="mb-3">
-          <label for="form-select" class="form-label"
-            >Related language or framework</label
-          >
-          <select class="form-select" aria-label="Default select example" name="dropdown">
-            <option selected>HTML</option>
-            <option value="1">CSS</option>
-            <option value="2">Javascript</option>
-            <option value="3">Bootstrap</option>
-            <option value="3">React</option>
-            <option value="3">Node.js</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label for="difficulty" class="form-label">Select difficulty</label>
-          <div class="difficulty">
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
-              />
-              <label class="form-check-label" for="inlineRadio1"
-                >Beginner</label
-              >
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio2"
-                value="option2"
-              />
-              <label class="form-check-label" for="inlineRadio2">Easy</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineRadio3">Medium</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineRadio3">Hard</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio3"
-                value="option3"
-              />
-              <label class="form-check-label" for="inlineRadio3">Expert</label>
+          <div class="mb-3">
+            <label for="difficulty" class="form-label">Select difficulty</label>
+            <div class="difficulty">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Beginner"/>
+                <label class="form-check-label" for="inlineRadio1">Beginner</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Easy"/>
+                <label class="form-check-label" for="inlineRadio2">Easy</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Medium"/>
+                <label class="form-check-label" for="inlineRadio3">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Hard"/>
+                <label class="form-check-label" for="inlineRadio3">Hard</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Expert"/>
+                <label class="form-check-label" for="inlineRadio3">Expert</label>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label"
-            >Add related media (Videos, PDF files etc.)</label
-          >
-          <input
-            class="form-control"
-            type="file"
-            name="file"
-            id="formFileMultiple"
-            multiple
-          />
-        </div>
-
-        <?php
-
-          if (isset ($_POST['Create'])) {
-
-              $instructor_id = $_SESSION['Id'];
-	            $title = $_POST['title'];
-	            $photos = $_POST['photos'];
-              $description = $_POST['description'];
-              $language = $_POST['dropdown'];
-              $difficulty = $_POST['inlineRadioOptions'];
-              $file = $_POST['file'];
-              
-              
-              $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
-              mysqli_query($con, "INSERT INTO courses VALUES(DEFAULT, '$instructor_id', '$title', '$photos', '$description', '$language', '$difficulty', '$file',)");
-              if(mysqli_affected_rows($con) ==1) {
-                echo "<font color =green size =14>Επιτυχής Δημιουργία! :)</font><br />";
-              }
-              else {
-                echo "<font color =red size =14>Αποτυχία Δημιουργίας :(</font> <br />";
-              }	
-
-    
-            } else{
-
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Add related media (Videos, PDF files etc.)</label>
+            <input class="form-control" type="file" name="file" id="formFileMultiple" multiple/>
+          </div>
            
-        ?>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Youtube URL</label>
+            <input type="text" name="youtube_URL" class="form-control" id="exampleFormControlInput1" placeholder="ex. https://www.youtube.com/..." />
+          </div>
 
-        <div class="mb-3" id="last_row">
-          <div class="buttons-area">
-            <input type="submit" name="Create" class="btn btn-danger" value="Create"/>
-            <button type="button" class="btn btn-secondary">Cancel</button>
+          <div class="mb-3" id="last_row">
+            <div class="buttons-area">
+              <input type="submit" name="Create" class="btn btn-danger" value="Create"/>
+              <button type="submit" class="btn btn-secondary" name="Cancel" value="Cancel">Cancel</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <?php
-          }
-    ?>
+    </form>
 
+    <?php
+      }
+      elseif(isset($_POST['Cancel'])){
+        ?>
+        
+    <form method="post" action="" enctype="multipart/form-data">
+
+<div class="row">
+  <div class="form-container">
+  <h2>Create New Course</h2>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text"  name="title" class="form-control" id="exampleFormControlInput1" placeholder="ex. HTML Basics" />
+      </div>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Add a photo</label>
+        <input class="form-control" type="file" id="formFile" name="photos"/>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="form-select" class="form-label">Related language or framework</label>
+        <select class="form-select" aria-label="Default select example" name="dropdown">
+          <?php 
+            $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+            $count = 0;
+            $result=mysqli_query($con, "SELECT Title FROM language;");
+            while ($row = mysqli_fetch_array($result)) {                    
+              $title = $row[0];
+              if($count==0){
+          ?>
+            <option selected><?=$title?></option>
+          <?php
+            }
+          else{
+          ?>            
+            <option value="<?=$count?>"><?=$title?></option>
+          <?php
+          }
+          $count++;
+          }
+          ?>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="difficulty" class="form-label">Select difficulty</label>
+        <div class="difficulty">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Beginner"/>
+            <label class="form-check-label" for="inlineRadio1">Beginner</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Easy"/>
+            <label class="form-check-label" for="inlineRadio2">Easy</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Medium"/>
+            <label class="form-check-label" for="inlineRadio3">Medium</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Hard"/>
+            <label class="form-check-label" for="inlineRadio3">Hard</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Expert"/>
+            <label class="form-check-label" for="inlineRadio3">Expert</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Add related media (Videos, PDF files etc.)</label>
+        <input class="form-control" type="file" name="file" id="formFileMultiple" multiple/>
+      </div>
+           
+      <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Youtube URL</label>
+            <input type="text" name="youtube_URL" class="form-control" id="exampleFormControlInput1" placeholder="ex. https://www.youtube.com/..." />
+          </div>
+
+
+      <div class="mb-3" id="last_row">
+        <div class="buttons-area">
+          <input type="submit" name="Create" class="btn btn-danger" value="Create"/>
+          <button type="submit" class="btn btn-secondary" name="Cancel" value="Cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+        <?php
+      }
+      else{
+        $instructor_id = $_SESSION['Id'];
+        $title = $_POST['title'];
+        $photos = $_FILES['photos']['name'];
+        $description = $_POST['description'];
+        $language_title = $_POST['dropdown'];
+        $difficulty = $_POST['inlineRadioOptions'];
+        $file = $_FILES['file']['name'];
+        $youtube_URL = $_POST['youtube_URL'];
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+        $result=mysqli_query($con, "SELECT Id FROM language WHERE Title='$language_title';");
+        while ($row = mysqli_fetch_array($result)) {                    
+          $language_id = $row[0];
+        }
+
+        mysqli_query($con, "INSERT INTO course (Id, Instructor_Id, Related_Language_Id, Title, Image, Description, Difficulty) VALUES (NULL, '$instructor_id', '$language_id', '$title', '$photos', '$description', '$difficulty');");
+        $result=mysqli_query($con, "SELECT MAX(Id) FROM file;");
+        while ($row = mysqli_fetch_array($result)) {                    
+          $course_id = $row[0];
+        }
+        $course_id++;
+        if(mysqli_affected_rows($con) ==1) {
+          if (is_uploaded_file($_FILES['file']['tmp_name']) && !$_FILES['file']['size'] == 0) {
+            copy($_FILES['file']['tmp_name'], "./files/".$_FILES['file']['name']);
+            mysqli_query($con,"INSERT INTO file (Id, Lesson_Id, URL) VALUES (NULL, '$course_id', '$file');");
+          }
+          if (!$youtube_URL=="") {
+            mysqli_query($con,"INSERT INTO file (Id, Lesson_Id, URL) VALUES (NULL, '$course_id', '$youtube_URL');");
+          }
+          if (is_uploaded_file($_FILES['photos']['tmp_name'])) {
+            copy($_FILES['photos']['tmp_name'], "./images/".$_FILES['photos']['name']);     
+          }
+
+        }
+
+        //header("Location: instructor_main.html");
+
+      }
+    ?>
     <footer class="footer">
       <p>NeoLearn &copy; 2023</p>
       <nav>

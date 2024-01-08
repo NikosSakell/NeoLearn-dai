@@ -87,7 +87,7 @@
                     </div>
                     <div class="col" id="select-label">
                         <input type="radio" id="html" name="role" value="PROFESSOR">
-                        <label for="html">PROFESSOR</label>
+                        <label for="html">INSTRUCTOR</label>
                     </div>
                     <div class="col" id="select-label">
                         <input type="radio" id="css" name="role" value="STUDENT">
@@ -114,6 +114,7 @@
         </div>
         <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
     </div>
+    </form>
 
         
     <?php
@@ -142,7 +143,7 @@
 	}
 	
 	if($role=='PROFESSOR'){
-		mysqli_query($con, "INSERT INTO professor (`Id`) VALUES ('$id');");
+		mysqli_query($con, "INSERT INTO instructor (`Id`) VALUES ('$id');");
 	}
 	
 		if(mysqli_affected_rows($con) >0) {  
@@ -160,6 +161,7 @@
         	
 	}
 	?>
+
     <!-- <footer>
         <p>footer</p>
 

@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css\course_list.css" />
     <title>NeoLearn - All Courses</title>
-    <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png" />
+    <link rel="icon" type="image/x-icon" href="instructor_main.php" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -59,13 +59,13 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="add_courses.html">Add New</a>
+                <a class="dropdown-item" href="add_courses.php">Add New</a>
               </li>
               <li><a class="dropdown-item" href="#">More</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profile.html">Profile</a>
+            <a class="nav-link" href="profile.php">Profile</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -78,8 +78,8 @@
               Settings
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Support</a></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item" href="">Support</a></li>
+              <li><a class="dropdown-item" href="index.php">Log Out</a></li>
             </ul>
           </li>
         </ul>
@@ -93,14 +93,15 @@
             <?php
                         session_start();
                         $count = 0;
-                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
 
-                        $result=mysqli_query($con, "SELECT courses.Title, courses.Description , courses.Image FROM courses JOIN instructor WHERE courses.Instructor_Id=instructor.Id;");
+                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN instructor WHERE course.Instructor_Id=instructor.Id;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
                             $description = $row[1];
-                            $image = $row[2];                
+                            $image = $row[2];     
+                            $id= $row[3];           
             ?>
            
             <div class="carousel-item <?php if($count==0) :?> active <?php endif;?>">
@@ -115,8 +116,9 @@
                   <p class="card-text">
                   <?=$description?>
                   </p>
-                  <a href="#" class="btn btn-primary">Select</a>
                 </div>
+                <a href="course_page.php?id=<?=$id?>" class="btn btn-primary">Select</a>
+
               </div>
             </div>
 
