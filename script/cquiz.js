@@ -113,5 +113,9 @@ function nextQuestion() {
     }
 }
 
+function redirectToPage() {
+    window.location.href = "test_challenges.php";
+  }
+
 // Εκκίνηση του quiz με την πρώτη ερώτηση
 loadQuestion();
