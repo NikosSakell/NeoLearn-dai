@@ -29,10 +29,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About us </a>
+                    <a class="nav-link" href="about_us.html">About us </a>
                 </li>
 
             </ul>

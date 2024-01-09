@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css\index_styles.css">
-    <title>NeoLearn</title>
+    <title>NeoLearn | Home</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
 </head>
 
@@ -29,7 +29,7 @@
   </button>
 
   <div>
-      <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" alt="" width="80" height="40"></a>
+      <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" alt="NeoLearn Logo" width="80" height="40"></a>
   </div>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
@@ -37,7 +37,7 @@
               <a class="nav-link" href="#">Help</a>
           </li> -->
           <li class="nav-item">
-              <a class="nav-link" href="#">About us </a>
+              <a class="nav-link" href="about_us.html">About us </a>
           </li>
           <a class="nav-link" href="#">
             <button type="button" id="logButton" class="btn btn-outline-light" onclick="window.location.href='login.php'">Login</button>

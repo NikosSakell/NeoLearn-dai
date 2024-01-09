@@ -15,7 +15,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
  </head>
     <link rel="stylesheet" href="css\studentmain_style.css">
-    <title>NeoLearn</title>
+    <title>NeoLearn | Student</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
 </head>
 

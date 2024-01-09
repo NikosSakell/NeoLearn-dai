@@ -1,0 +1,74 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #050505;
+  overflow-x: hidden;
+}
+
+.uom-logo {
+  width: auto;
+  height: 100pt;
+  padding: 20pt;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  border: 2pt solid white;
+  border-radius: 8%;
+  background: linear-gradient(rgb(250, 250, 250), rgb(200, 200, 200));
+  transition: transform 0.3s ease-in-out;
+}
+
+.row {
+  padding-left: 10pt;
+  padding-right: 10pt;
+  display: flex;
+  justify-content: center;
+}
+
+.uom-logo:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+}
+
+p {
+  padding-top: 10pt;
+}
+
+.container {
+  width: max-content;
+  background-color: black;
+  color: #ecf0f1;
+  height: 400pt;
+  padding-bottom: 50pt;
+  margin-top: 50pt;
+  margin-bottom: 50pt;
+}
+
+footer {
+  /* position: fixed;
+  bottom: 0; */
+  background-color: #192370;
+  color: #ecf0f1;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
+  footer a {
+    color: #ecf0f1; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Καμία υπογράμμιση */
+    margin: 0 10px; /* Απόσταση μεταξύ των συνδέσμων */
+    font-weight: bold; /* Έντονη γραμματοσειρά */
+  }
+
+  /* Στυλ για το κείμενο φούτερ */
+  footer p {
+    font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
+  }
+}
