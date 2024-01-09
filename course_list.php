@@ -78,7 +78,7 @@
               Settings
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Support</a></li>
+              <li><a class="dropdown-item" href="about_us.html">Support</a></li>
               <li><a class="dropdown-item" href="index.php?flag=0">Log Out</a></li>
             </ul>
           </li>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the main page for a student user">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -34,7 +35,7 @@ session_start();
         </button>
 
         <div>
-            <a class="navbar-brand" href="#"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.php'" alt="" width="80" height="40"></a>
+            <a class="navbar-brand" href="#" alt="neolearn logo"><img src="images\neolearn_logo.svg" onclick="window.location.href='student_main.php'" alt="" width="80" height="40"></a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
@@ -51,7 +52,7 @@ session_start();
                      Profile
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Support</a></li>
+                      <li><a class="dropdown-item" href="about_us.html">Support</a></li>
                       <li><a class="dropdown-item" href="#" onclick="window.location.href='index.php?flag=0'">Log out</a></li>
 
                     </ul>
@@ -65,7 +66,7 @@ session_start();
     <div class="row">
       <div class="col-10 col-lg-3 icon-holder">
         <div class="icons">
-          <img class="code-icon" src="images/code-icon.svg">
+          <img class="code-icon" alt="Code brackets icon" src="images/code-icon.svg">
         </div>
         <div class="tag-holder">
           <p>Code</p>
@@ -73,7 +74,7 @@ session_start();
       </div>
       <div class="col-10 col-lg-3 icon-holder">
         <div class="icons">
-          <img class="code-icon" src="images/grad-cap.svg">
+          <img class="code-icon" alt="Graduation cap icon" src="images/grad-cap.svg">
         </div>
         <div class="tag-holder">
           <p>Learn</p>
@@ -81,7 +82,7 @@ session_start();
       </div>
       <div class="col-10 col-lg-3 icon-holder">
         <div class="icons">
-          <img class="code-icon" src="images/world-icon.svg">
+          <img class="code-icon" alt="World sphere icon" src="images/world-icon.svg">
         </div>
         <div class="tag-holder">
           <p>Create</p>
@@ -114,7 +115,7 @@ session_start();
 
 
 
-    <footer class="fixed-bottom  text-white text-center py-2">
+    <footer class="text-white text-center py-2">
         <p>NeoLearn &copy; 2023</p>
         <nav>
             <a href="https://www.uom.gr/">Πανεπιστήμιο Μακεδονίας</a>
