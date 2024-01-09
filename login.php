@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -59,7 +67,7 @@
                 <div class="login-field">
                     <h1>Welcome </br>Back!</h1>
                     <div class="row" id="username">
-                        <input type="text" id="username" name="username" placeholder="Username or email">
+                        <input type="text" id="username" name="username" placeholder="Email">
                     </div>
                     <div class=row id="password">
                         <input type="password" id="password" name="password" placeholder="Password">
@@ -75,37 +83,64 @@
 		 
 		<?php
 		//If form submitted, process input.
-		}else{
-            {
-                $username= $_POST["username"];
-                $password=$_POST["password"];
+		}
+        else{
             
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn');
-                session_start();
-                    
-                $result=mysqli_query($con, "SELECT Id, Role FROM user WHERE Id='$username' AND  Password='$password';");
-                while ($row = mysqli_fetch_array($result)) {                    
+            $username= $_POST["username"];
+            $password=$_POST["password"];
+        
+            $con=mysqli_connect('localhost', 'root', '', 'neolearn');
+            session_start();
+            $flag=0;
+            $result=mysqli_query($con, "SELECT Id, Role  FROM user WHERE Email='$username' AND  Password='$password';");
+            while ($row = mysqli_fetch_array($result)) {
+                    echo "No results found."; 
+                    $flag=1; 
                     $_SESSION['Id'] = $row[0];
                     $role = $row[1];
-                    echo "$role";
-                }
-                mysqli_close($con);
-
+                
+            }
+            mysqli_close($con);
+            if($flag==1){
                 if($role=="STUDENT"){
                     header("Location: student_main.php");
                     exit();    
                 }
 
                 if($role=="INSTRUCTOR"){
-                    header("Location: instructor_main.php?flag=0");
-                    exit();    
-                }                     
-            }		
-		}
-		?>
+                        header("Location: instructor_main.php?flag=0");
+                        exit();    
+                }
+            }
+            else{
+        ?>
+		 
+            <form method="post" action="">
 
-
-    
+            <div class="row">
+            <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                <div class="login-field">
+                    <h1>Welcome </br>Back!</h1>
+                    <div class="row" id="username">
+                        <input type="text" id="username" name="username" placeholder="Email">
+                    </div>
+                    <div class=row id="password">
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <p>Forgot your password?</p>
+                    <div class="row">
+                        <button class="login_button btn-danger" name="submit">Login</button>
+                        <p style="color:red; font-size:40px;";>Wrong Email or password. Try again.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
+            </div>
+        <?php
+        }            		
+    }
+    ?>
 
     <!-- <footer>
         <p>footer</p>
