@@ -1,87 +1,155 @@
+html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #050505; 
-  }
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #050505;
+  overflow-x: hidden;
+}
 
-  h2{
-    color: antiquewhite;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 30px;
-  }
+h2 {
+  color: antiquewhite;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 30px;
+}
 
-  .container {
-    position: relative;
-  }
+p {
+  color: #ecf0f1;
+}
 
-  .text-bottom-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 20px;
-  }
+.icon-holder {
+  display: flex;
+  justify-content: center;
+}
 
-  .header-container {
-    text-align: center;
-    padding: 80px 0;
-  }
+.tag-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10pt;
+  font-size: large;
+}
 
-  .header-text {
-    font-size: 36px;
-    font-weight: bold;
-    color: #007bff;
-    animation: colorChange 4s infinite alternate; /* Διακύμανση χρώματος για 4 δευτερόλεπτα */
-  }
+.container {
+  position: relative;
+}
 
-  @keyframes colorChange {
-     0% {
-      color: #6792bf;
-    }
-    50% {
-      color: #00ffcc; 
-    }
-    100% {
-      color: #b8c0c9;
-    } 
-  }
-   
-  .info-container {
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 50px;
-    text-align: center;
-    background: linear-gradient(45deg, #ba9dd5, #4b0082);
-    border: 2px solid #8a2be2;
-    border-radius: 15px;
-    display: inline-block; 
-    position: relative;
-    margin-left: 25%;
-  }
-  
+.row {
+  display: flex;
+  justify-content: center;
+}
 
-  .info-text {
-    font-size: 24px;
-    font-weight: bold;
+.text-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 150pt;
+  padding: 80pt;
+}
+
+.header-text {
+  font-size: 36px;
+  font-weight: bold;
+  animation: colorChange 4s infinite alternate; /* Διακύμανση χρώματος για 4 δευτερόλεπτα */
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(180, 180, 180);
   }
-  
-  footer {
-    background-color:  #192370; 
-    color: #ecf0f1; 
-    padding: 20px; 
-    text-align: center; 
-    font-family:Georgia, 'Times New Roman', Times, serif;
-  
-  
+  50% {
+    color: #4752a3;
+  }
+  100% {
+    color: #ecf0f1;
+  }
+}
+
+.info-container {
+  margin-top: 50pt;
+  margin-bottom: 250pt;
+  color: white;
+  display: flex;
+  justify-content: center;
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  padding: 50pt;
+  text-align: center;
+  background: linear-gradient(45deg, #4752a3, #192370);
+  border: 2px solid #ecf0f1;
+  border-radius: 15px;
+}
+
+.info-text {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  padding-right: 10pt;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 5pt;
+  padding-bottom: 5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border-radius: 10%;
+}
+
+.icons {
+  margin-top: 50pt;
+  margin-bottom: 50pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 70pt;
+  height: 70pt;
+  border-radius: 10%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.icon-holder {
+  margin-top: 150pt;
+  margin-bottom: 150pt;
+}
+
+.code-icon {
+  height: 30pt;
+}
+
+.icons:hover {
+  transform: rotate(0.5turn);
+}
+
+footer {
+  /* position: fixed;
+  bottom: 0; */
+  background-color: #192370;
+  color: #ecf0f1;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
   footer a {
-    color: #ecf0f1; 
-    text-decoration: none; 
-    margin: 0 10px;
-    font-weight: bold; 
+    color: #ecf0f1; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Καμία υπογράμμιση */
+    margin: 0 10px; /* Απόσταση μεταξύ των συνδέσμων */
+    font-weight: bold; /* Έντονη γραμματοσειρά */
   }
-  
 
+  /* Στυλ για το κείμενο φούτερ */
   footer p {
-    font-size: 14px; 
+    font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
   }
 }

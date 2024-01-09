@@ -61,35 +61,57 @@ session_start();
 
     </nav>
 
-
-
-    <div class="container mt-5">
-        <h2>Available Courses</h2>
-        
-        <div id="courseCarousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" id="carousel-inner">
-          </div>
- 
-          <a class="carousel-control-prev" href="#courseCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#courseCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span> 
-          </a>
     
-          <div class="text-bottom-right mt-3">
-            <a href="student_courses.html">View All</a>
-          </div>
+    <div class="row">
+      <div class="col-10 col-lg-3 icon-holder">
+        <div class="icons">
+          <img class="code-icon" src="images/code-icon.svg">
+        </div>
+        <div class="tag-holder">
+          <p>Code</p>
         </div>
       </div>
+      <div class="col-10 col-lg-3 icon-holder">
+        <div class="icons">
+          <img class="code-icon" src="images/grad-cap.svg">
+        </div>
+        <div class="tag-holder">
+          <p>Learn</p>
+        </div>
+      </div>
+      <div class="col-10 col-lg-3 icon-holder">
+        <div class="icons">
+          <img class="code-icon" src="images/world-icon.svg">
+        </div>
+        <div class="tag-holder">
+          <p>Create</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-11 col-md-8">
 
       <div class="header-container">
         <h1 class="header-text">Get ready to explore a new world full of opportunities</h1>
       </div>
 
-     <div class="info-container">
-    <p class="info-text">Complete the challenges and get certifications <img src="images\clipart2614681.png" alt="Black medal emoji " width="50" height="50" class="image"> </p>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-11 col-md-8">
+
+      <div class="info-container">
+        <p class="info-text">Complete the challenges and get certifications 
+          <div class="image-container"> 
+            <img src="images\clipart2614681.png" alt="Black medal emoji " width="50" height="50" class="image"> </p>
+          </div>
+      </div>
+
+      </div>
+    </div>
+
 
 
     <footer class="fixed-bottom  text-white text-center py-2">
