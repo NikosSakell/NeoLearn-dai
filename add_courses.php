@@ -116,7 +116,7 @@
             <label for="form-select" class="form-label">Related language or framework</label>
             <select class="form-select" aria-label="Default select example" name="dropdown">
               <?php 
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                $con=mysqli_connect('localhost', 'root', '', 'neolearn' );
                 $count = 0;
                 $result=mysqli_query($con, "SELECT Title FROM language;");
                 while ($row = mysqli_fetch_array($result)) {                    

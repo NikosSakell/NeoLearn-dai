@@ -99,7 +99,7 @@
         session_start();
         if(isset($_GET["id"])) $id=$_GET["id"];
 
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
 
         $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image FROM course WHERE course.Id=$id;");
         
@@ -143,7 +143,6 @@
           <h4>Additional Resources:</h4>
             
           <?php
-            $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
             $result=mysqli_query($con, "SELECT URL FROM file WHERE Lesson_Id=$id;");
             
             while ($row = mysqli_fetch_array($result)) {                    

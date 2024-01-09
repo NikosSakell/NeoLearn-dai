@@ -67,7 +67,7 @@
                         $student_Id=$_SESSION['Id'];
                         $count = 0;
 
-                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
                         $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN student_has_courses WHERE course.Id=student_has_courses.Course_Id;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    

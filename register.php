@@ -121,7 +121,7 @@
     //If form submitted, process input.
     }else{
  
-	$con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+	$con=mysqli_connect('localhost', 'root', '', 'neolearn');
     session_start();
 
     $password = $_POST["password"];

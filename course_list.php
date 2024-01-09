@@ -94,7 +94,7 @@
                         session_start();
                         $count = 0;
 
-                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
                         $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN instructor WHERE course.Instructor_Id=instructor.Id;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    

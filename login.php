@@ -83,7 +83,7 @@
                 $username= $_POST["username"];
                 $password=$_POST["password"];
             
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                $con=mysqli_connect('localhost', 'root', '', 'neolearn');
                 session_start();
                     
                 $result=mysqli_query($con, "SELECT Id, Role FROM user WHERE Id='$username' AND  Password='$password';");
