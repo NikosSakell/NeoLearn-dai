@@ -130,7 +130,7 @@
                     </div>
                     <p>Forgot your password?</p>
                     <div class="row">
-                        <button class="login_button btn-danger" name="submit">Login</button>
+                        <button class="login_button btn-success" id="btnLogin" name="submit">Login</button>
                         <p style="color:red; font-size:40px;";>Wrong Email or password. Try again.</p>
                     </div>
                 </div>
@@ -146,6 +146,7 @@
         <p>footer</p>
 
     </footer> -->
+    <script src="script/login.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

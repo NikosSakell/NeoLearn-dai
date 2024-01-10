@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  $con=mysqli_connect('localhost', 'root', '', 'neolearn');
+  $instructor_id = $_SESSION['Id'];
+  $result = mysqli_query($con, "SELECT First_Name, Last_Name, Birth_Date, Image, Company, Phone, Email FROM User WHERE user.Id = '$instructor_id';");
+  while ($row = mysqli_fetch_array($result)) {                    
+    $first_Name = $row[0];
+    $last_Name = $row[1];
+    $birth_Date = $row[2];     
+    $image = $row[3];
+    $company = $row[4];
+    $phone = $row[5];
+    $email = $row[6];
+  }
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -92,19 +107,18 @@
 
 
     <?php
-      session_start();
       //If form not submitted, display form.
       if (!isset($_POST['submit'])){
     ?>
     <!-- Edit/Delete/Add Photo Modal -->
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="" class="row g-3">
 
     <div class="infoContainer">
       <div class="row g-3" id="basicInfoContainer">
         <div class="col-md-6" id="imageContainer">
           <div class="card">
             <img
-              src="images/blank-profile-picture-973460_1280.png"
+              src="images/<?=$image?>"
               class="profilePhoto"
               id="profilePhoto"
             />
@@ -123,9 +137,9 @@
         </div>
         <div class="col-md-6" id="name_email_phone">
           <div class="basicInfo">
-            <p class="nameHolder" id="nameHolder">Name Surname</p>
-            <p class="emailHolder" id="emailHolder">example@email.com</p>
-            <p class="phoneHolder" id="phoneHolder">+30 6969696969</p>
+            <p class="nameHolder" id="nameHolder"><?=$first_Name?> <?=$last_Name?> </p>
+            <p class="emailHolder" id="emailHolder"><?=$email?></p>
+            <p class="phoneHolder" id="phoneHolder"><?=$phone?></p>
 
             <div id="editBasicInfo">
               <button
@@ -144,13 +158,14 @@
         <div class="col-12">
           <div class="mb-3">
             <label for="descriptionArea" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" name="birthDate" id="descriptionArea" rows="3"
+            <input type="date" class="form-control" name="birthDate" value="<?=$birth_Date?>" id="descriptionArea" rows="3"
             ></input>
           </div>
         </div>
         <div class="col-12">
           <label for="inputCompany" class="form-label">Company</label>
           <input
+            value="<?=$company?>"
             name="company"
             type="text"
             class="form-control"
@@ -178,7 +193,7 @@
             </h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close"  
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -274,7 +289,7 @@
               type="submit"
               name="submit"
               data-bs-dismiss="modal"
-              class="btn btn-success"
+              class="btn btn-primary"
             >
               Save changes
             </button>
@@ -286,16 +301,13 @@
     <?php
       }
       else{
-        $instructor_id = $_SESSION['Id'];
         $phoneNumber = $_POST['phoneNumber'];
         $email = $_POST['email'];
         $company = $_POST['company'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
-        $image = $_FILES['image']['name'];
-        echo "$image"; 
+        $image = $_POST['image'];
         $birth_date = $_POST['birthDate'];
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
         if(!$name==""){
           mysqli_query($con, "UPDATE user SET First_Name = '$name' WHERE user.Id = '$instructor_id';");
         }
@@ -309,10 +321,6 @@
           mysqli_query($con, "UPDATE user SET Phone = '$phoneNumber' WHERE user.Id = '$instructor_id';");
         }
         if(!$image==""){
-          if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-            copy($_FILES['image']['tmp_name'], "./images/".$_FILES['image']['name']);
-           //  move_uploaded_file($_FILES['userfile']['tmp_name'], 					                                    $_FILES['userfile']['name']);
-          }
           mysqli_query($con, "UPDATE user SET Image = '$image' WHERE user.Id = '$instructor_id';");
         }
         if(!$birth_date==""){
@@ -336,6 +344,7 @@
     </nav>
     
 </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -93,9 +93,9 @@
             <?php
                         session_start();
                         $count = 0;
-
+                        $id=$_SESSION['Id'];
                         $con=mysqli_connect('localhost', 'root', '', 'neolearn');
-                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN instructor WHERE course.Instructor_Id=instructor.Id;");
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course WHERE course.Instructor_Id='$id';");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
@@ -163,6 +163,7 @@
     </nav>
     
 </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -105,7 +105,7 @@
                     <label for="check" id="agree-label"> I Agree with Terms and Conditions</label><br>
                 </div>
                 <div class="row">
-                    <button class="register_button btn-danger" name="submit">Register</button>
+                    <button class="register_button btn-success" name="submit">Register</button>
                 </div>
             </div>
         </div>
