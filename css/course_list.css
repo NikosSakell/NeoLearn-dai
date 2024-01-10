@@ -39,9 +39,34 @@ p {
 }
 
 footer {
+  /* position: fixed;
+  bottom: 0; */
   background-color: #192370;
   color: #ecf0f1;
-  padding: 20px;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
   text-align: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
+
+  footer a {
+    color: black; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Καμία υπογράμμιση */
+    margin: 0 10px; /* Απόσταση μεταξύ των συνδέσμων */
+    font-weight: bold; /* Έντονη γραμματοσειρά */
+  }
+
+  /* Στυλ για το κείμενο φούτερ */
+  p {
+    text-align: center;
+    font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
+  }
+
+  .uom-link-icon {
+    width: 20pt;
+    height: 20pt;
+  }
+
+  .p2 {
+    font-size: 10pt;
+    color: rgb(150, 150, 150);
+  }
 }

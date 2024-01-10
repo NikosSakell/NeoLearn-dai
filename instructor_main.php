@@ -129,11 +129,15 @@
       </div>
     </div>
     <footer class="footer">
-      <p>NeoLearn &copy; 2023</p>
-      <nav>
-        <a href="https://www.uom.gr/">Πανεπιστήμιο Μακεδονίας</a>
-      </nav>
-    </footer>
+    
+    <nav>
+    <p>NeoLearn &copy; 2024 |
+      <a href="https://www.uom.gr/">University of Macedonia</a> | All rights reserved. </p>
+      <p>Contact: Department of Applied Informatics <a href="mailto:daisecr@uom.edu.gr">dai@uom.gr</a></p>
+      <p class="p2">Course: Special Web Programming Topics (Computer Science Major 7th semester) </p>
+    </nav>
+    
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
