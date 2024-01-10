@@ -78,7 +78,7 @@
               Settings
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Support</a></li>
+              <li><a class="dropdown-item" href="about_us.html">Support</a></li>
               <li><a class="dropdown-item" href="index.php?flag=0">Log Out</a></li>
             </ul>
           </li>
@@ -93,9 +93,9 @@
             <?php
                         session_start();
                         $count = 0;
-
+                        $id=$_SESSION['Id'];
                         $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
-                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN instructor WHERE course.Instructor_Id=instructor.Id;");
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course WHERE course.Instructor_Id='$id';");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
