@@ -74,7 +74,7 @@
                     </div>
                     <p>Forgot your password?</p>
                     <div class="row">
-                        <button class="login_button btn-danger" name="submit">Login</button>
+                        <button class="login_button btn-success" name="submit">Login</button>
                     </div>
                 </div>
             </div>

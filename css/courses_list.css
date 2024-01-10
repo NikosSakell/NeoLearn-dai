@@ -15,6 +15,10 @@ body {
   font-size: 30pt;
 }
 
+.card-img-top {
+  height: 150pt;
+}
+
 .card-text {
   font-size: 15pt;
   color: rgb(60, 60, 60);
