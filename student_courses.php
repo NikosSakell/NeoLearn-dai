@@ -57,7 +57,7 @@
         </div>
 
     </nav>
-    
+
     <div class="row">
         <div class="col-11 col-sm-8 col-md-6 col-lg-5">
             <div id="carouselExample" class="carousel slide">
@@ -66,9 +66,8 @@
                         session_start();
                         $student_Id=$_SESSION['Id'];
                         $count = 0;
-
-                        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
-                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course JOIN student_has_courses WHERE course.Id=student_has_courses.Course_Id;");
+                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                        $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
                             $title = $row[0];
@@ -76,7 +75,6 @@
                             $image = $row[2];    
                             $id = $row[3];            
                     ?>
-
                     <div class="carousel-item <?php if($count==0) :?> active <?php endif;?>">
                         <div class="card">
                             <img

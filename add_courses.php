@@ -87,6 +87,7 @@
     </nav>
     <?php
       session_start();
+      $con=mysqli_connect('localhost', 'root', '', 'neolearn');
       //If form not submitted, display form.
       if (!isset($_POST['Create']) && !isset($_POST['Cancel'])){
     ?>
@@ -116,19 +117,17 @@
             <label for="form-select" class="form-label">Related language or framework</label>
             <select class="form-select" aria-label="Default select example" name="dropdown">
               <?php 
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn' );
                 $count = 0;
-                $result=mysqli_query($con, "SELECT Title FROM language;");
+                $result=mysqli_query($con, "SELECT Title, Id FROM language;");
                 while ($row = mysqli_fetch_array($result)) {                    
-                  $title = $row[0];
                   if($count==0){
               ?>
-                <option selected><?=$title?></option>
+                <option selected value="<?=$row[1]?>"><?=$row[0]?></option>
               <?php
                 }
               else{
               ?>            
-                <option value="<?=$count?>"><?=$title?></option>
+                <option value="<?=$row[1]?>"><?=$row[0]?></option>
               <?php
               }
               $count++;
@@ -214,19 +213,17 @@
         <label for="form-select" class="form-label">Related language or framework</label>
         <select class="form-select" aria-label="Default select example" name="dropdown">
           <?php 
-            $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
             $count = 0;
-            $result=mysqli_query($con, "SELECT Title FROM language;");
+            $result=mysqli_query($con, "SELECT Title, Id FROM language;");
             while ($row = mysqli_fetch_array($result)) {                    
-              $title = $row[0];
               if($count==0){
           ?>
-            <option selected><?=$title?></option>
+            <option selected value="<?=$row[1]?>"><?=$row[0]?></option>
           <?php
             }
           else{
           ?>            
-            <option value="<?=$count?>"><?=$title?></option>
+            <option value="<?=$row[1]?>"><?=$row[0]?></option>
           <?php
           }
           $count++;
@@ -289,22 +286,17 @@
         $title = $_POST['title'];
         $photos = $_FILES['photos']['name'];
         $description = $_POST['description'];
-        $language_title = $_POST['dropdown'];
+        $language_id = $_POST['dropdown'];
         $difficulty = $_POST['inlineRadioOptions'];
         $file = $_FILES['file']['name'];
         $youtube_URL = $_POST['youtube_URL'];
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
-        $result=mysqli_query($con, "SELECT Id FROM language WHERE Title='$language_title';");
-        while ($row = mysqli_fetch_array($result)) {                    
-          $language_id = $row[0];
-        }
 
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
         mysqli_query($con, "INSERT INTO course (Id, Instructor_Id, Related_Language_Id, Title, Image, Description, Difficulty) VALUES (NULL, '$instructor_id', '$language_id', '$title', '$photos', '$description', '$difficulty');");
         $result=mysqli_query($con, "SELECT MAX(Id) FROM course;");
         while ($row = mysqli_fetch_array($result)) {                    
           $course_id = $row[0];
         }
-        echo "$course_id";
         if(mysqli_affected_rows($con) ==1) {
           if (is_uploaded_file($_FILES['file']['tmp_name']) && !$_FILES['file']['size'] == 0) {
             copy($_FILES['file']['tmp_name'], "./files/".$_FILES['file']['name']);
@@ -319,7 +311,7 @@
 
         }
   
-        header("Location: instructor_main.php?flag=1");
+       header("Location: instructor_main.php?flag=1");
 
       }
     ?>

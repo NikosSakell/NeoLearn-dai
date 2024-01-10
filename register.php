@@ -48,7 +48,7 @@
 		if (!isset($_POST['submit'])){
     ?>
         
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
 
     <div class="row">
         <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
@@ -129,21 +129,26 @@
 	$company = $_POST["company"];
 	$phone = $_POST["phone"];
 	$role = $_POST["role"];
-    $image = $_POST["image"];
+    $image = $_FILES["image"]["name"];
     
 	mysqli_query($con, "INSERT INTO user VALUES('NULL', '$password', '$firstname', '$lastname', '$birth_date', '$email', '$company', '$role', '$phone', '$image')");
 	$result = mysqli_query($con, "SELECT MAX(Id) FROM user;");
     $max_id = mysqli_fetch_array($result);
     $id = $max_id[0];
-	if($role=='STUDENT'){
-		mysqli_query($con, "INSERT INTO student VALUES('$id')");
-	}
 	
-	if($role=='INSTRUCTOR'){
-		mysqli_query($con, "INSERT INTO instructor (`Id`) VALUES ('$id');");
-	}
-	
-		if(mysqli_affected_rows($con) >0) {  
+		if(mysqli_affected_rows($con) >0) {
+            if($role=='STUDENT'){
+                mysqli_query($con, "INSERT INTO student VALUES('$id')");
+            }
+            
+            if($role=='INSTRUCTOR'){
+                mysqli_query($con, "INSERT INTO instructor (`Id`) VALUES ('$id');");
+            }
+             
+            if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+                copy($_FILES['image']['tmp_name'], "./images/".$_FILES['image']['name']);
+               //  move_uploaded_file($_FILES['userfile']['tmp_name'], 					                                    $_FILES['userfile']['name']);
+            }
             mysqli_close($con);
             header("Location: index.php?flag=1");
             exit();

@@ -67,7 +67,7 @@
                 session_start();
                 $count = 0;
 
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn');
+                $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
                 $result=mysqli_query($con, "SELECT Title, Description, Image FROM quiz;");
                 
                 while ($row = mysqli_fetch_array($result)) {    

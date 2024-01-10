@@ -82,7 +82,7 @@
               Settings
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="about_us.html">Support</a></li>
+              <li><a class="dropdown-item" href="#">Support</a></li>
               <li><a class="dropdown-item" href="index.php?flag=0">Log Out</a></li>
             </ul>
           </li>
@@ -97,7 +97,7 @@
       if (!isset($_POST['submit'])){
     ?>
     <!-- Edit/Delete/Add Photo Modal -->
-    <form method="post" action="" class="row g-3">
+    <form method="post" action="" enctype="multipart/form-data">
 
     <div class="infoContainer">
       <div class="row g-3" id="basicInfoContainer">
@@ -292,9 +292,10 @@
         $company = $_POST['company'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
-        $image = $_POST['image'];
+        $image = $_FILES['image']['name'];
+        echo "$image"; 
         $birth_date = $_POST['birthDate'];
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
         if(!$name==""){
           mysqli_query($con, "UPDATE user SET First_Name = '$name' WHERE user.Id = '$instructor_id';");
         }
@@ -308,6 +309,10 @@
           mysqli_query($con, "UPDATE user SET Phone = '$phoneNumber' WHERE user.Id = '$instructor_id';");
         }
         if(!$image==""){
+          if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+            copy($_FILES['image']['tmp_name'], "./images/".$_FILES['image']['name']);
+           //  move_uploaded_file($_FILES['userfile']['tmp_name'], 					                                    $_FILES['userfile']['name']);
+          }
           mysqli_query($con, "UPDATE user SET Image = '$image' WHERE user.Id = '$instructor_id';");
         }
         if(!$birth_date==""){
