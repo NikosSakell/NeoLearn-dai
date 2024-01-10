@@ -1,0 +1,67 @@
+html,
+body {
+  background-color: #050505;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+h2 {
+  padding-top: 50pt;
+  padding-bottom: 50pt;
+  color: antiquewhite;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 30pt;
+  font-weight: 600;
+}
+
+.container {
+  margin-bottom: 50pt;
+}
+
+.card {
+  background-color: rgba(9, 9, 9, 0.1);
+  color: antiquewhite;
+}
+
+.btn {
+  background-color: #6242a7;
+  color: #cfc1d6;
+}
+
+.btn:hover {
+  background-color: #cfc1d6;
+  color: #3b0253;
+}
+
+#quizModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+footer {
+  background-color: #192370;
+  color: #ecf0f1;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

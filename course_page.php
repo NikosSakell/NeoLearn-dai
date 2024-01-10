@@ -140,7 +140,7 @@
     <div class="row" id="last_row">
       <div class="col-10">
         <div class="additional_info_container">
-          <h4>Additional Resources:</h4>
+          <h4>Additional Resources (Related videos, PDF files to download etc.):</h4>
             
           <?php
             $result=mysqli_query($con, "SELECT URL FROM file WHERE Lesson_Id=$id;");
@@ -175,6 +175,7 @@
                     else{
                   ?>
                     <a href="files/<?=$url?>" ><?=$url?></a>
+                    <p></br>___________________________________________________________</p>
                 <?php
                     }
                  ?>
@@ -187,12 +188,6 @@
                     
                 }
             ?>
-          <h5>
-            Download additional files and media related to this course here:
-          </h5>
-          <button class="btn btn-primary">
-            <i class="fa fa-download" id="download_icon"></i>Download
-          </button>
         </div>
       </div>
     </div>

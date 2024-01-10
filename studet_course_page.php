@@ -77,7 +77,7 @@
         session_start();
         if(isset($_GET["id"])) $id=$_GET["id"];
 
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
 
         $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image FROM course WHERE course.Id=$id;");
         
@@ -118,7 +118,7 @@
     <div class="row" id="last_row">
       <div class="col-10">
         <div class="additional_info_container">
-          <h4>Additional Resources:</h4>
+          <h4>Additional Resources: (Related videos, PDF files to download etc.)</h4>
             
           <?php
             // $con=mysqli_connect('localhost', 'root', '', 'neolearn');
@@ -154,6 +154,7 @@
                     else{
                   ?>
                     <a href="files/<?=$url?>" ><?=$url?></a>
+                    <p></br>_____________________________________________ </p>
                 <?php
                     }
                  ?>
@@ -166,12 +167,7 @@
                     
                 }
             ?>
-          <h5>
-            Download additional files and media related to this course here:
-          </h5>
-          <button class="btn btn-primary">
-            <i class="fa fa-download" id="download_icon"></i>Download
-          </button>
+          
         </div>
       </div>
     </div>

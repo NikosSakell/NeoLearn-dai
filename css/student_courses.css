@@ -1,8 +1,5 @@
-/* This page contains a carousel slider with card components
-inside it */
-html,
 body {
-  background-color: #4752a3;
+  background-color: black;
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -24,7 +21,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4752a3;
   min-height: 300pt;
   padding-top: 30pt;
   padding-bottom: 30pt;
@@ -44,4 +40,15 @@ footer {
   padding: 20px;
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
+
+  footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
 }

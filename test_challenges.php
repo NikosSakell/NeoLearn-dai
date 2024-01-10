@@ -14,7 +14,7 @@
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
  </head>
-    <link rel="stylesheet" href="css\chaltest_styles.css">
+    <link rel="stylesheet" href="css\challenges_test_styles.css">
     <title>NeoLearn | Challenges</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
 </head>
@@ -67,7 +67,7 @@
                 session_start();
                 $count = 0;
 
-                $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                $con=mysqli_connect('localhost', 'root', '', 'neolearn');
                 $result=mysqli_query($con, "SELECT Title, Description, Image FROM quiz;");
                 
                 while ($row = mysqli_fetch_array($result)) {    
@@ -93,7 +93,7 @@
   
         </div>
 
-
+    </div>
       <footer class="footer">
         <p>NeoLearn &copy; 2023</p>
         <nav>

@@ -295,7 +295,7 @@
         $image = $_FILES['image']['name'];
         echo "$image"; 
         $birth_date = $_POST['birthDate'];
-        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
         if(!$name==""){
           mysqli_query($con, "UPDATE user SET First_Name = '$name' WHERE user.Id = '$instructor_id';");
         }

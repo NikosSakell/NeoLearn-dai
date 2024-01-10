@@ -114,7 +114,10 @@
                 <div class="card-body">
                   <h5 class="card-title"><?=$title?></h5>
                   <p class="card-text">
-                  <?=$description?>
+                  <?php
+                   $words = str_word_count($description, 1);
+                   $first_20_words = implode(' ', array_slice($words, 0, 20)); 
+                   echo $first_20_words.'...';?>
                   </p>
                 </div>
                 <a href="course_page.php?id=<?=$id?>" class="btn btn-primary">Select</a>

@@ -14,7 +14,7 @@
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
  </head>
-    <link rel="stylesheet" href="css\studcourses.css">
+    <link rel="stylesheet" href="css\student_courses.css">
     <title>NeoLearn | Course Title Here</title>
     <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png">
 </head>
@@ -66,7 +66,7 @@
                         session_start();
                         $student_Id=$_SESSION['Id'];
                         $count = 0;
-                        $con=mysqli_connect('localhost', 'root', '', 'neolearn', 3307);
+                        $con=mysqli_connect('localhost', 'root', '', 'neolearn');
                         $result=mysqli_query($con, "SELECT course.Title, course.Description , course.Image, course.Id FROM course;");
                         
                         while ($row = mysqli_fetch_array($result)) {                    
@@ -85,7 +85,10 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?=$title?></h5>
                                 <p class="card-text">
-                                <?=$description?>
+                                <?php
+                                    $words = str_word_count($description, 1);
+                                    $first_20_words = implode(' ', array_slice($words, 0, 20)); 
+                                    echo $first_20_words.'...';?>
                                 </p>
                             </div>
                             <a href="studet_course_page.php?id=<?=$id?>" class="btn btn-primary">Select</a>
