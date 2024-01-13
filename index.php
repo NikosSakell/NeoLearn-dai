@@ -77,7 +77,7 @@
         Welcome to NeoLearn, the online school of programming
         <img
           src="images/laptop_prog.png"
-          alt="white computer side emoji "
+          alt="black laptop with programming icon on the center ,side emoji "
           class="image"
         />
       </h1>
