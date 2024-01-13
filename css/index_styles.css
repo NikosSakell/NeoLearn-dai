@@ -11,6 +11,7 @@ body {
 .chat-container {
   padding-top: 20pt;
   max-width: 500pt;
+  margin-left: 15pt;
   text-align: center;
   border: 2pt solid #192370;
   border-radius: 1%;

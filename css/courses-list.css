@@ -59,7 +59,7 @@ footer {
   }
 
   /* Στυλ για το κείμενο φούτερ */
-  p {
+  footer p {
     text-align: center;
     font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
   }

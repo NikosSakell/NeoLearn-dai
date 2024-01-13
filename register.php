@@ -147,7 +147,7 @@
              
             if (is_uploaded_file($_FILES['image']['tmp_name'])) {
                 copy($_FILES['image']['tmp_name'], "./images/".$_FILES['image']['name']);
-               //  move_uploaded_file($_FILES['userfile']['tmp_name'], 					                                    $_FILES['userfile']['name']);
+               //  move_uploaded_file($_FILES['userfile']['tmp_name'], 					                                   
             }
             mysqli_close($con);
             header("Location: index.php?flag=1");

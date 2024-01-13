@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="css\courses_list.css" />
+    <link rel="stylesheet" href="css\courses-list.css" />
     <title>NeoLearn - All Courses</title>
     <link rel="icon" type="image/x-icon" href="instructor_main.php?flag=0" />
     <link
