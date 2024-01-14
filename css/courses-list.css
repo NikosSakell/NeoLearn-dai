@@ -37,10 +37,10 @@ body {
 }
 
 /* Alignment of the .p element to center the text */
-p {
+/* p {
   text-align: center;
   font-size: 20pt;
-}
+} */
 
 footer {
   /* position: fixed;

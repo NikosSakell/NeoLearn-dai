@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css\courses-list.css" />
     <title>NeoLearn - All Courses</title>
-    <link rel="icon" type="image/x-icon" href="instructor_main.php?flag=0" />
+    <link rel="icon" type="image/x-icon" href="images\neolearn_logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
